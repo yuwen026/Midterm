@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .student {
+            border: 3px solid #000;
+            padding: 10px;
+            width: 450px;
+            text-align: left;
+            background: #fff;
+            position: relative;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+            border-radius: 5px;
+        }
+
+        .student img {
+            width: 80px; 
+            height: 80px; 
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .student-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .student-header strong {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body onload="getData()">
+    <div class="container">
+        <h1>ABC Colleges</h1>
+        <h2>Library Users</h2>
+        <div id="studentData"></div>
+    </div>
+
+    <xml id="xmldata" style="display: none;">
+        <students>
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+            
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+
+           <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            <student>
+                <picture>https://clipart-library.com/newhp/5-57164_employee-clipart-tuxedo-lawyer-attorney.png</picture>
+                <name>Juan Dela Cruz</name>
+                <course>BSIT</course>
+                <yearLevel>3ag2</yearLevel>
+                <adviser>Mr. Sheldon V. Arenas</adviser>
+                <schoolYear>2025-2026</schoolYear>
+            </student>
+
+            
+
+
+        </students>
+    </xml>
+
+    <script>
+        function getData() {
+            let xml = document.getElementById("xmldata");
+            let students = xml.getElementsByTagName("student");
+            let output = "<div class='grid-container'>";
+
+            for (let i = 0; i < students.length; i++) {
+                let student = students[i].children;
+                output += "<div class='student'>";
+                output += "<div class='student-header'><strong>" + student[1].textContent + "</strong><img src='" + student[0].textContent + "' alt='Student Picture'></div>";
+                output += "<p><b>Course:</b> " + student[2].textContent + "</p>";
+                output += "<p><b>Year Level / Section:</b> " + student[3].textContent + "</p>";
+                output += "<p><b>Adviser:</b> " + student[4].textContent + "</p>";
+                output += "<p><b>School Year:</b> " + student[5].textContent + "</p>";
+                output += "</div>";
+            }
+            output += "</div>";
+
+            document.getElementById("studentData").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
