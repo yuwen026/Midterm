@@ -68,136 +68,32 @@
         <div id="studentData"></div>
     </div>
 
-    <xml id="xmldata" style="display: none;">
-         <students>
-            <student>
-                <picture>https://mrwallpaper.com/images/hd/one-piece-wano-luffy-grin-rq1vkn4s4211k05t.jpg</picture>
-                <name>Monkey D.Luffy</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-            
-            <student>
-                <picture>https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/zoro-one-piece.jpg</picture>
-                <name>Roronoa Zoro</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-                
-            
-            <student>
-                <picture>https://static.wikia.nocookie.net/fiveworldadventures/images/5/53/Usopp.png</picture>
-                <name>Usopp</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-           
-           
-            <student>
-                <picture>https://cdn.oneesports.gg/cdn-data/2024/05/Anime_OnePiece_Sanji_Smoking_Shocked-1024x576.jpg</picture>
-                <name>Vinsmoke Sanji</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-
-
-            <student>
-                <picture>https://staticg.sportskeeda.com/editor/2023/03/36043-16794903654441-1920.jpg</picture>
-                <name>Nami</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-
-            <student>
-                <picture>https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/chopper-in-one-piece.jpg</picture>
-                <name>Chopper</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-           
-
-
-            <student>
-                <picture>https://www.themarysue.com/wp-content/uploads/2024/09/Nico-Robin-One-Piece.jpg</picture>
-                <name>Robin</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-
-            
-
-           
-
-    
-
-            <student>
-                <picture>https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/One-Piece-Franky.png</picture>
-                <name>Franky</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-
-
-            <student>
-                <picture>https://wegotthiscovered.com/wp-content/uploads/2023/08/Brook-One-Piece.jpg</picture>
-                <name>Brook</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-            
-            <student>
-                <picture>https://comicbook.com/wp-content/uploads/sites/4/2022/04/20a822de-846b-4a24-afac-25d543d6c11f.jpg</picture>
-                <name>Jimbei</name>
-                <course>BSIT</course>
-                <yearLevel>3ag2</yearLevel>
-                <adviser>Mr. Sheldon V. Arenas</adviser>
-                <schoolYear>2025-2026</schoolYear>
-            </student>
-
-        
-            
-
-
-        </students>
-    </xml>
-
     <script>
         function getData() {
-            let xml = document.getElementById("xmldata");
-            let students = xml.getElementsByTagName("student");
-            let output = "<div class='grid-container'>";
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    const xml = this.responseXML;
+                    const students = xml.getElementsByTagName("student");
+                    let output = "<div class='grid-container'>";
 
-            for (let i = 0; i < students.length; i++) {
-                let student = students[i].children;
-                output += "<div class='student'>";
-                output += "<div class='student-header'><strong>" + student[1].textContent + "</strong><img src='" + student[0].textContent + "' alt='Student Picture'></div>";
-                output += "<p><b>Course:</b> " + student[2].textContent + "</p>";
-                output += "<p><b>Year Level / Section:</b> " + student[3].textContent + "</p>";
-                output += "<p><b>Adviser:</b> " + student[4].textContent + "</p>";
-                output += "<p><b>School Year:</b> " + student[5].textContent + "</p>";
-                output += "</div>";
-            }
-            output += "</div>";
+                    for (let i = 0; i < students.length; i++) {
+                        const student = students[i].children;
+                        output += "<div class='student'>";
+                        output += "<div class='student-header'><strong>" + student[1].textContent + "</strong><img src='" + student[0].textContent + "' alt='Student Picture'></div>";
+                        output += "<p><b>Course:</b> " + student[2].textContent + "</p>";
+                        output += "<p><b>Year Level / Section:</b> " + student[3].textContent + "</p>";
+                        output += "<p><b>Adviser:</b> " + student[4].textContent + "</p>";
+                        output += "<p><b>School Year:</b> " + student[5].textContent + "</p>";
+                        output += "</div>";
+                    }
+                    output += "</div>";
 
-            document.getElementById("studentData").innerHTML = output;
+                    document.getElementById("studentData").innerHTML = output;
+                }
+            };
+            xhttp.open("GET", "Yuwen_Garcia.xml", true);
+            xhttp.send();
         }
     </script>
 </body>
